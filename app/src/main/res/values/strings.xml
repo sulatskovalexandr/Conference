@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">PartnerkinTestApp</string>
+    <string name="comferences_toolbar_title">Конференции</string>
+    <string name="button_registration_text">Регистрация</string>
+    <string name="related_evetns">Связанные события</string>
+    <string name="about_event">О событии</string>
+    <string name="load_error">Не удалось загрузить данные</string>
+
+    <string-array name="monthsEng">
+        <item>JAN</item>
+        <item>FEB</item>
+        <item>MAR</item>
+        <item>APR</item>
+        <item>MAY</item>
+        <item>JUN</item>
+        <item>JIL</item>
+        <item>AUG</item>
+        <item>SEP</item>
+        <item>OCT</item>
+        <item>NOV</item>
+        <item>DEC</item>
+    </string-array>
+
+    <string-array name="monthsRu">
+        <item>Январь</item>
+        <item>Февраль</item>
+        <item>Март</item>
+        <item>Апрель</item>
+        <item>Май</item>
+        <item>Июнь</item>
+        <item>Июль</item>
+        <item>Август</item>
+        <item>Сентябрь</item>
+        <item>Октябрь</item>
+        <item>Ноябрь</item>
+        <item>Декабрь</item>
+    </string-array>
+
+    <string-array name="eventMonths">
+        <item>Января</item>
+        <item>Февраля</item>
+        <item>Марта</item>
+        <item>Апреля</item>
+        <item>Мая</item>
+        <item>Июня</item>
+        <item>Июля</item>
+        <item>Августа</item>
+        <item>Сентября</item>
+        <item>Октября</item>
+        <item>Ноября</item>
+        <item>Декабря</item>
+    </string-array>
+
+    <plurals name="plurals_1">
+        <item quantity="zero">%1$d = zero</item>
+        <item quantity="one">%1$d = one</item>
+        <item quantity="two">%1$d = two</item>
+        <item quantity="few">%1$d = few</item>
+        <item quantity="many">%1$d = many</item>
+        <item quantity="other">%1$d = other</item>
+    </plurals>
+
+       <plurals name="plurals_day">
+        <item quantity="one">%d день</item>
+        <item quantity="few">%d дня</item>
+        <item quantity="many">%d дней</item>
+        <item quantity="other">%d дня</item>
+    </plurals>
+
+
+</resources>
