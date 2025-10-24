@@ -1,6 +1,5 @@
 package com.example.partnerkintestapp.ui.theme
 
-import android.widget.Button
 import androidx.compose.ui.graphics.Color
 
 val Primary = Color(0xFF0E1234)

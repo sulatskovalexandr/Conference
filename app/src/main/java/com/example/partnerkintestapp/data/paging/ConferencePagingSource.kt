@@ -32,7 +32,6 @@ class ConferencePagingSource(private val repository: ConferenceRepository) :
             val perPage = 5
 
             val response = repository.getConferences()
-//                if (page == 1) pagingData1 else pagingData2
             val data = response.data
             val error = response.error
             if (data != null) {

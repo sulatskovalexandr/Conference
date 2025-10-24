@@ -23,14 +23,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             PartnerkinTestAppTheme {
-                KoinApplication({
-                    modules(
-                        koinConferenceModule,
-                        koinHttpClientModule,
-                        koinRepositoryModule
-                    )
-                }
-
+                KoinApplication(
+                    application = {
+                        modules(
+                            koinConferenceModule,
+                            koinHttpClientModule,
+                            koinRepositoryModule
+                        )
+                    },
                 ) {
                     val navController = rememberNavController()
                     NavHost(

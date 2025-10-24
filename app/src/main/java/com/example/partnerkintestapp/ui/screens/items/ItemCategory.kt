@@ -40,7 +40,6 @@ fun ItemCategory(
         fontStyle = FontStyle.Normal,
         fontWeight = FontWeight.SemiBold
     )
-
 }
 
 @Composable

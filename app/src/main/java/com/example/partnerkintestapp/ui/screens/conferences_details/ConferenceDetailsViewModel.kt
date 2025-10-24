@@ -19,7 +19,6 @@ class ConferenceDetailsViewModel(
     private val _state: MutableStateFlow<State> = MutableStateFlow(State.Loading)
     val state: Flow<State> = _state.asStateFlow()
 
-
     init {
         getConferenceDetails()
     }
@@ -51,19 +50,16 @@ class ConferenceDetailsViewModel(
                             about = conf.about
                         )
                     }
-                }else{
+                } else {
                     _state.update { State.Error }
                 }
 
             } catch (t: Throwable) {
                 t.printStackTrace()
                 _state.update { State.Error }
-
             }
         }
     }
-
-
 }
 
 sealed interface State {
@@ -84,7 +80,7 @@ sealed interface State {
         val city: String,
         val categories: List<Category>,
         val typeName: String,
-        val registerUrl : String,
+        val registerUrl: String,
         val about: String
     ) : State
 

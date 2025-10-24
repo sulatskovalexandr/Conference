@@ -14,5 +14,5 @@ class ConferenceService(
         client.get("api_ios_test/list").body()
 
     suspend fun getConference(): ViewApiResponse =
-        client.get("/api_ios_test/view").body()
+        client.get("api_ios_test/view").body()
 }

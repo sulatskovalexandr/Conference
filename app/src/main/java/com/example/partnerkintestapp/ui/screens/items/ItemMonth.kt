@@ -29,8 +29,7 @@ fun ItemMonth(
             .padding(top = 16.dp)
             .padding(8.dp)
             .background(MaterialTheme.colorScheme.background)
-    )
-    {
+    ) {
         val startCalendar = parseDate(monthItem.startDate)
         val monthArray = stringArrayResource(R.array.monthsRu)
         Text(

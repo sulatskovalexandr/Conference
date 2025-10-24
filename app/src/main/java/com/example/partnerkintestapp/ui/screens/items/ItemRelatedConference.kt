@@ -83,7 +83,7 @@ fun ItemRelatedEvent(
                     painter = painterResource(id = R.drawable.ic_star),
                     contentDescription = "Rating",
                     tint = Color(0xFFFFB800),
-                    )
+                )
             }
 
             Spacer(modifier = Modifier.width(4.dp))

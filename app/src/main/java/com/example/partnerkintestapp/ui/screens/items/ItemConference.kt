@@ -67,7 +67,6 @@ fun ItemConference(conference: ConferenceListItem.ConferenceItem, onConfClick: (
                 shape = RoundedCornerShape(16.dp),
             )
             .padding(horizontal = 16.dp)
-
     ) {
         if (conference.status == StatusTitle.CANCELED.status) {
             Row(
@@ -77,7 +76,6 @@ fun ItemConference(conference: ConferenceListItem.ConferenceItem, onConfClick: (
                         .background(
                             color =
                                 OnCanceledPrimaryContainer
-
                         )
                         .border(
                             1.dp,
@@ -93,7 +91,6 @@ fun ItemConference(conference: ConferenceListItem.ConferenceItem, onConfClick: (
                     imageVector = ImageVector.vectorResource(id = R.drawable.ic_lightning)
                 )
 
-
                 Text(
                     modifier = Modifier,
                     text = conference.statusTitle,
@@ -105,7 +102,6 @@ fun ItemConference(conference: ConferenceListItem.ConferenceItem, onConfClick: (
                 )
             }
         }
-
 
         Spacer(
             modifier = Modifier
@@ -291,5 +287,4 @@ fun PreviewConferenceItem(modifier: Modifier = Modifier) {
         ) {
         }
     }
-
 }

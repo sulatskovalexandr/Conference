@@ -17,5 +17,4 @@ fun NavGraphBuilder.ConferenceDetailsScreen(
         ConferenceDetailsContent(state) {
             navController.navigateUp()
         }
-
 }

@@ -57,7 +57,7 @@ import com.example.partnerkintestapp.ui.theme.InterSemiboldFontFamily
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ConferenceDetailsContent(
-    conference: State,
+    state: State,
     onBackClick: () -> Unit,
 ) {
 
@@ -80,7 +80,7 @@ fun ConferenceDetailsContent(
             )
         }
     ) { innerPadding ->
-        when (conference) {
+        when (state) {
             is State.Conference -> {
                 val scroll: ScrollState = rememberScrollState(0)
                 Column(
@@ -93,7 +93,7 @@ fun ConferenceDetailsContent(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 16.dp, end = 16.dp, top = 12.dp),
-                        text = conference.typeName,
+                        text = state.typeName,
                         style = TextStyle(fontSize = 14.sp),
                         color = MaterialTheme.colorScheme.primary,
                         fontFamily = InterNormalFontFamily,
@@ -104,7 +104,7 @@ fun ConferenceDetailsContent(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(start = 16.dp, end = 16.dp, top = 4.dp),
-                        text = conference.name,
+                        text = state.name,
                         style = TextStyle(fontSize = 24.sp),
                         color = MaterialTheme.colorScheme.primary,
                         fontFamily = InterSemiboldFontFamily,
@@ -118,13 +118,13 @@ fun ConferenceDetailsContent(
                             .fillMaxWidth()
                             .padding(horizontal = 16.dp)
                             .clip(shape = RoundedCornerShape(12.dp)),
-                        model = conference.imageUrl,
+                        model = state.imageUrl,
                         contentDescription = null,
                         contentScale = ContentScale.Crop
                     )
                     CategoriesDetailsList(
                         modifier = Modifier.padding(horizontal = 16.dp),
-                        categories = conference.categories
+                        categories = state.categories
                     )
 
                     Spacer(modifier = Modifier.height(20.dp))
@@ -136,8 +136,8 @@ fun ConferenceDetailsContent(
                         verticalAlignment = Alignment.CenterVertically
                     ) {
 
-                        val startCalendar = parseDate(conference.startDate)
-                        val endCalendar = parseDate(conference.endDate)
+                        val startCalendar = parseDate(state.startDate)
+                        val endCalendar = parseDate(state.endDate)
                         val monthArray = stringArrayResource(R.array.eventMonths)
                         Icon(
                             modifier = Modifier.size(24.dp),
@@ -185,7 +185,7 @@ fun ConferenceDetailsContent(
                         )
                         Text(
                             modifier = Modifier.padding(horizontal = 8.dp),
-                            text = "${conference.city}, ${conference.country}",
+                            text = "${state.city}, ${state.country}",
                             style = TextStyle(fontSize = 16.sp),
                             color = MaterialTheme.colorScheme.primary,
                             fontFamily = InterSemiboldFontFamily
@@ -224,7 +224,7 @@ fun ConferenceDetailsContent(
                         fontWeight = FontWeight.SemiBold,
                     )
 
-                    ItemRelatedEvent(relatedConference = conference.relatedConferences[0]) { }
+                    ItemRelatedEvent(relatedConference = state.relatedConferences[0]) { }
                     Spacer(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -232,7 +232,7 @@ fun ConferenceDetailsContent(
                             .padding(horizontal = 16.dp)
                             .background(color = MaterialTheme.colorScheme.primaryContainer)
                     )
-                    ItemRelatedEvent(relatedConference = conference.relatedConferences[1]) { }
+                    ItemRelatedEvent(relatedConference = state.relatedConferences[1]) { }
                     Spacer(
                         modifier = Modifier
                             .fillMaxWidth()
@@ -240,7 +240,7 @@ fun ConferenceDetailsContent(
                             .padding(horizontal = 16.dp)
                             .background(color = MaterialTheme.colorScheme.primaryContainer)
                     )
-                    ItemRelatedEvent(relatedConference = conference.relatedConferences[2]) { }
+                    ItemRelatedEvent(relatedConference = state.relatedConferences[2]) { }
 
                     Spacer(modifier = Modifier.height(48.dp))
 
@@ -256,12 +256,13 @@ fun ConferenceDetailsContent(
                     Spacer(modifier = Modifier.height(12.dp))
                     Text(
                         modifier = Modifier.padding(horizontal = 16.dp),
-                        text = conference.about,
+                        text = state.about,
                         style = TextStyle(fontSize = 15.sp),
                         color = MaterialTheme.colorScheme.primary,
                         fontFamily = InterNormalFontFamily,
                         fontStyle = FontStyle.Normal,
                     )
+
                     Spacer(modifier = Modifier.height(16.dp))
 
                 }
@@ -272,7 +273,7 @@ fun ConferenceDetailsContent(
                     CircularProgressIndicator(
                         modifier = Modifier
                             .align(Alignment.Center),
-                        )
+                    )
                 }
             }
 
@@ -285,8 +286,6 @@ fun ConferenceDetailsContent(
                     )
                 }
             }
-
-
         }
     }
 }
@@ -295,7 +294,7 @@ fun ConferenceDetailsContent(
 @Composable
 private fun PreviewConferenceDetailsContent() {
     ConferenceDetailsContent(
-        conference = State.Conference(
+        state = State.Conference(
             id = 3228,
             name = "SiGMA Africa 2025",
             format = "offline",

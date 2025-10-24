@@ -22,6 +22,5 @@ class ConferencesViewModel(
         ConferencePagingSource(conferenceRepository)
     }.flow.cachedIn(viewModelScope)
 
-
 }
 

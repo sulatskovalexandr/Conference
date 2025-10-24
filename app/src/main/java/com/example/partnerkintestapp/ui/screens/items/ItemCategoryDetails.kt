@@ -35,7 +35,6 @@ fun ItemCategoryDetails(
         color = MaterialTheme.colorScheme.primary,
         fontFamily = InterSemiboldFontFamily
     )
-
 }
 
 @Composable
